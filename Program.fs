@@ -44,5 +44,5 @@ module Program =
     let main (args: string[]) =
         match List.ofArray (Array.map int args) with
         | n::k::id when id.Length > 0 -> processing id n k
-        | _ -> printfn "error bad args"
+        | _ -> printfn "error bad args\n args: n k <list id ids>\nids:\n1 -> segment\n2 -> logarifm\n_ -> linear"
         0

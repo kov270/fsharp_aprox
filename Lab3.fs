@@ -79,15 +79,12 @@ let genPoint (n: int) points =
     | _ -> fun _ -> 0
 
 let print (funcs: ((double -> double) * int)[]) (pointGen: int -> double) count =
-    funcs
-    |> Array.map (fun (_, id) -> $"%d{id} | ")
-    |> Array.fold (+) ""
-    |> printfn "%s"
+    printfn ""
 
     [ 0 .. count - 1 ]
     |> List.map (fun i ->
         funcs
-        |> Array.map (fun (f, _) -> $"x: %11.4f{pointGen i}, y: %11.4f{f (pointGen i)} | ")
+        |> Array.map (fun (f, _) -> $"x: %5.2f{pointGen i}, y: %5.2f{f (pointGen i)} | ")
         |> Array.fold (+) ""
         |> printfn "%s")
     |> ignore
