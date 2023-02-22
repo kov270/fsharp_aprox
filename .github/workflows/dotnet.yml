@@ -40,3 +40,5 @@ jobs:
            fantomas Lab3.fs
     - name: Test
       run: dotnet test --no-build --logger:"console;verbosity=detailed"
+    - name: Run
+      run: cat text.txt | dotnet run 5 5 1 2 3
